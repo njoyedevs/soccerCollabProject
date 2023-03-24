@@ -65,3 +65,4 @@
 
     #Excluding build directory
     public/
+node_modules
