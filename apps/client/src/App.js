@@ -2,7 +2,7 @@ import './App.css';
 import Standings from './components/StandingsComponent';
 import Games from './components/GamesComponent';
 import Game from './components/GameComponent';
-const APIKEY = 'b7a8474c1f81e9ce7295f98ce33eb5f4';
+const APIKEY = '';
 
 function App() {
   return (
