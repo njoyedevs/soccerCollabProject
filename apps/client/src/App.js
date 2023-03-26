@@ -14,13 +14,16 @@ function App() {
       <div className="middleRow">Middle R - Insert Here</div>
       <div className="bottomCol">
         <div className="leftBottomCol box">
-          <Games apiKey={APIKEY} />
+          Standings
+          <Standings apiKey={APIKEY} />
         </div>
         <div className="centerBottomCol box">
-          <Game apiKey={APIKEY} gameId="718243" />
+          Games
+          <Games apiKey={APIKEY} />
         </div>
         <div className="rightBottomCol box">
-          <Standings apiKey={APIKEY} />
+          Game
+          <Game apiKey={APIKEY} gameId="718243" />
         </div>
       </div>
     </div>
