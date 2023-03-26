@@ -37,7 +37,7 @@
   width: 100%;
 }
 
-.navbar{
+.navbar {
   margin-left: 50px;
   display: flex;
   justify-content: space-evenly;
@@ -46,9 +46,10 @@
 .icons {
   margin-left: 10px;
   display: flex;
+  align-items: center;
 }
 
-.icons > h5{
+.icons > h5 {
   margin-left: 10px;
   margin-right: 50px;
 }
