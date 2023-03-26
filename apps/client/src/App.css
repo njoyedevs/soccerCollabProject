@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #111111;
+  color: white;
 }
 
 .middleRow {
@@ -28,4 +30,30 @@
   flex-direction: column;
   margin: 2rem;
   border: 0.1rem solid black;
+}
+.top-menu {
+  border-bottom: white solid 1px;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.navbar{
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icons {
+  margin-left: 10px;
+  display: flex;
+}
+
+.icons > h5{
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+#login-button {
+  margin-bottom: 10px;
+  margin-right: 40px;
 }

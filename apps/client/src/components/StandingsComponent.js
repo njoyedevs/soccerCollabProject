@@ -4,7 +4,7 @@ const Standings = ({
   apiKey,
   league = '39',
   team = '',
-  season = '2021',
+  season = '2022',
   theme = '',
   showErrors = 'false',
   showLogos = 'true',
