@@ -78,6 +78,7 @@ const BouncyBall = ({ angle = 4 }) => {
         width: `${containerDimensions.width}px`,
         height: `${containerDimensions.height}px`,
         pointerEvents: 'none',
+        zIndex: -1,
       }}
     >
       <div key={`${ball.x}-${ball.y}`} style={ballStyle}></div>
