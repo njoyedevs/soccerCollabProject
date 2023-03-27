@@ -25,7 +25,14 @@ function App() {
           <Game apiKey={APIKEY} gameId="718243" />
         </div>
       </div>
-      <BouncyBall />
+      <BouncyBall angle="4" />
+      <BouncyBall angle="2" />
+      <BouncyBall angle="6" />
+      <BouncyBall angle="3" />
+      <BouncyBall angle="7" />
+      <BouncyBall angle="5" />
+      <BouncyBall angle="8" />
+      <BouncyBall angle="9" />
     </div>
   );
 }

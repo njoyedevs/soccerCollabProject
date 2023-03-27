@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import soccerBallImage from '../static/soccer_ball.png';
 
-const BouncyBall = () => {
+const BouncyBall = ({ angle = 4 }) => {
   const [ball, setBall] = useState({
     x: 100,
     y: 100,
     radius: 30,
-    angle: Math.PI / 4,
+    angle: Math.PI / angle,
     speed: 20,
   });
 
