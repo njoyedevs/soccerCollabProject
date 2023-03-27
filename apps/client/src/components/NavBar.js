@@ -8,7 +8,11 @@ const NavBar = (props) => {
     <nav className="navbar">
       <div className="dropDown">
         <Dropdown>
-          <Dropdown.Toggle style={{ backgroundColor: 'black', border: 'none' }} variant="secondary" id="dropdown-basic">
+          <Dropdown.Toggle
+            style={{ backgroundColor: 'black', border: '.1rem solid white' }}
+            variant="secondary"
+            id="dropdown-basic"
+          >
             <FontAwesomeIcon icon={faBars} />
           </Dropdown.Toggle>
 
