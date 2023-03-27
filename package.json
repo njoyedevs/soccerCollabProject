@@ -32,6 +32,7 @@
     ]
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "three": "^0.134.0"
   }
 }

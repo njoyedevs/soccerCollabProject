@@ -4,6 +4,7 @@ import Games from './components/GamesComponent';
 import Game from './components/GameComponent';
 import NavBar from './components/NavBar';
 import BouncyBall from './components/BouncyBall';
+import WaveBackground from './components/WaveBackground';
 
 const APIKEY = '';
 
@@ -33,6 +34,7 @@ function App() {
       <BouncyBall angle="5" />
       <BouncyBall angle="8" />
       <BouncyBall angle="9" />
+      <WaveBackground />
     </div>
   );
 }
