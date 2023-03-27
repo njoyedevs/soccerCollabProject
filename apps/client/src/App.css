@@ -7,7 +7,6 @@
 .App {
   display: flex;
   flex-direction: column;
-  /* background-color: #111111; */
   color: white;
   height: 100vh;
 }
@@ -17,7 +16,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border: 0.1rem solid black;
 }
 
 .bottomCol {
@@ -25,7 +23,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  border: 0.1rem solid black;
 }
 
 .centerBottomCol,
@@ -40,7 +37,6 @@
   justify-content: center;
   flex-direction: column;
   margin: 2rem;
-  border: 0.1rem solid black;
 }
 .top-menu {
   border-bottom: white solid 1px;
