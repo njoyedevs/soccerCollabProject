@@ -51,7 +51,7 @@ function App() {
             </p>
             <p>News</p>
           </div>
-          <button type="button" class="btn btn-outline-light" id="login-button">
+          <button type="button" className="btn btn-outline-light" id="login-button">
             Login/Signup
           </button>
         </nav>
