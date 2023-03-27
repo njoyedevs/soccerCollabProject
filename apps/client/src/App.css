@@ -59,14 +59,14 @@
   display: flex;
 }
 
-.icons > p {
+.icons > span {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: none;
 }
 
 #login-button {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-right: 40px;
 }
 
@@ -74,17 +74,11 @@
   display: flex;
   align-items: center; /* Align items vertically */
   justify-content: center; /* Align items horizontally */
-  /* margin-bottom: 10px; */
-  padding-bottom: 15px;
-}
-
-.dropDownWrapper {
-  display: flex;
-  align-items: center;
+  /* padding-bottom: 15px; */
 }
 
 .footyStats {
   margin-left: 5px;
-  padding-top: 15px;
+  padding-bottom: 5px;
   font-size: 30px;
 }
