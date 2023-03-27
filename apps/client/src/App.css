@@ -1,16 +1,18 @@
 * {
-  padding: 0rem;
-  margin: 0rem;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 .App {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: top; */
+  /* justify-content: center; */
   flex-direction: column;
   background-color: #111111;
   color: white;
+  /* padding: 0rem 0rem 20rem 0rem ; */
+  height: 100vh;
 }
 
 .middleRow {
