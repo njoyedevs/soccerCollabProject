@@ -6,7 +6,7 @@ import NavBar from './components/NavBar';
 import BouncyBall from './components/BouncyBall';
 import WaveBackground from './components/WaveBackground';
 
-const APIKEY = '';
+const APIKEY = 'b7a8474c1f81e9ce7295f98ce33eb5f4';
 
 function App() {
   return (
