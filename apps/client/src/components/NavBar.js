@@ -19,26 +19,26 @@ const NavBar = (props) => {
           </Dropdown.Menu>
         </Dropdown>
         <div className="footyStats">
-          <p>FootyStats</p>
+          <span>FootyStats</span>
         </div>
       </div>
       <div className="icons">
-        <p>
+        <span>
           <FontAwesomeIcon icon={faFutbol} />
-        </p>
-        <p>Scores</p>
+        </span>
+        <span>Scores</span>
       </div>
       <div className="icons">
-        <p>
+        <span>
           <FontAwesomeIcon icon={faStar} />
-        </p>
-        <p>Favorites</p>
+        </span>
+        <span>Favorites</span>
       </div>
       <div className="icons">
-        <p>
+        <span>
           <FontAwesomeIcon icon={faNewspaper} />
-        </p>
-        <p>News</p>
+        </span>
+        <span>News</span>
       </div>
       <button type="button" className="btn btn-outline-light" id="login-button">
         Login/Signup
