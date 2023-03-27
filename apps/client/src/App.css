@@ -6,12 +6,9 @@
 
 .App {
   display: flex;
-  /* align-items: top; */
-  /* justify-content: center; */
   flex-direction: column;
   background-color: #111111;
   color: white;
-  /* padding: 0rem 0rem 20rem 0rem ; */
   height: 100vh;
 }
 
@@ -29,6 +26,12 @@
   justify-content: center;
   flex-direction: row;
   border: 0.1rem solid black;
+}
+
+.centerBottomCol,
+.leftBottomCol,
+.rightBottomCol {
+  width: 25rem;
 }
 
 .box {
