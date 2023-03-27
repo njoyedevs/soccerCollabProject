@@ -66,7 +66,6 @@
 }
 
 #login-button {
-  /* margin-bottom: 10px; */
   margin-right: 40px;
 }
 
@@ -74,11 +73,10 @@
   display: flex;
   align-items: center; /* Align items vertically */
   justify-content: center; /* Align items horizontally */
-  /* padding-bottom: 15px; */
 }
 
 .footyStats {
   margin-left: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   font-size: 30px;
 }
