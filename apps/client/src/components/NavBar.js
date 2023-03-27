@@ -40,7 +40,7 @@ const NavBar = (props) => {
         </span>
         <span>News</span>
       </div>
-      <button type="button" className="btn btn-outline-light" id="login-button">
+      <button type="button" className="btn btn-outline-light .bg-dark " id="login-button">
         Login/Signup
       </button>
     </nav>
