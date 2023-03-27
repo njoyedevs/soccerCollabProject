@@ -22,7 +22,7 @@ const WaveBackground = () => {
       shininess: 20.0,
       waveHeight: 15.0,
       waveSpeed: 0.5,
-      zoom: 0.25,
+      zoom: 0.5,
     });
 
     return () => {
