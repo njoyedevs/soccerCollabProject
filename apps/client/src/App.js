@@ -3,6 +3,7 @@ import Standings from './components/StandingsComponent';
 import Games from './components/GamesComponent';
 import Game from './components/GameComponent';
 import NavBar from './components/NavBar';
+import BouncyBall from './components/BouncyBall';
 
 const APIKEY = '';
 
@@ -24,6 +25,7 @@ function App() {
           <Game apiKey={APIKEY} gameId="718243" />
         </div>
       </div>
+      <BouncyBall />
     </div>
   );
 }
