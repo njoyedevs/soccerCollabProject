@@ -5,29 +5,29 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
 import { createProduct } from '../services/internalApiService';
-const ClientID = process.env.REACT_APP_ClientID;
+const ClientID = process.env.REACT_APP_GOOGLE_ClientID;
 
 const NavBar = (props) => {
   const [user, setUser] = useState({});
 
   function HandleCallbackResponse(response) {
-    console.log('Encoded JWT ID token: ' + response.credential);
+    // console.log('Encoded JWT ID token: ' + response.credential);
     var userObject = jwt_decode(response.credential);
 
-    console.log(userObject);
+    // console.log(userObject);
     setUser(userObject);
 
     const newObject = {
-      given_name: userObject.given_name,
-      family_name: userObject.family_name,
-      name: userObject.name,
+      firstName: userObject.given_name,
+      lastName: userObject.family_name,
+      fullName: userObject.name,
       email: userObject.email,
-      email_verified: userObject.email_verified,
+      emailVerification: userObject.email_verified,
       picture: userObject.picture,
     };
 
     createProduct(newObject);
-    console.log(newObject);
+    // console.log(newObject);
 
     document.getElementById('signInDiv').hidden = true; // - Turn Back on For Button
   }
