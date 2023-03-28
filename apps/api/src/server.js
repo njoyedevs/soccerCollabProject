@@ -1,15 +1,20 @@
-const express = require('express');
-const cors = require('cors');
+import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+
+import { config as mongooseConfig } from './config/mongoose.config.js';
+import { productRoutes } from './routes/product.routes.js';
+
+dotenv.config();
 
 const app = express();
-require('./config/mongoose.config');
-require('dotenv').config();
+mongooseConfig();
 
 const port = process.env.PORT;
 
 app.use(cors());
-app.use(express.json(), express.urlencoded({ extended: true })); // This is new
-require('./routes/product.routes')(app);
+app.use(express.json(), express.urlencoded({ extended: true }));
+productRoutes(app);
 
 app.use((error, req, res, next) => {
   console.log(error);

@@ -11,8 +11,17 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "plugins": ["react", "prettier"],
   "rules": {
+    // File extensions are required on import statements in the back-end if import syntax is enabled via package.json
+    // "type": "module". This rule can be removed if import syntax is not used in the back-end.
+    "no-console": "off",
+    "max-classes-per-file": "off",
     // File extensions are required on import statements in the back-end if import syntax is enabled via package.json
     // "type": "module". This rule can be removed if import syntax is not used in the back-end.
     "import/extensions": "off",
@@ -36,6 +45,44 @@
       },
       {
         "enforceForRenamedProperties": false
+      }
+    ],
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "groups": ["external", "builtin", "internal", "sibling", "parent", "index"],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "components",
+            "group": "internal"
+          },
+          {
+            "pattern": "common",
+            "group": "internal"
+          },
+          {
+            "pattern": "routes/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "assets/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["internal"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ],
     "react/prop-types": ["off"],

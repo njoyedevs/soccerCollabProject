@@ -1,31 +1,49 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
+import pictureValidator from '../components/Validators.js';
+
+const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 const ProductSchema = new mongoose.Schema(
   {
-    //
-    store: {
+    firstName: {
       type: String,
-      required: [true, 'Store name is required'],
-      minlength: [3, 'Store name must be at least 3 characters long'],
+      required: [true, 'First name is required'],
+      minlength: [3, 'First name must be at least 3 characters long'],
     },
-    storeNumber: {
-      type: Number,
-      required: [true, 'Store number is required'],
+    lastName: {
+      type: String,
+      required: [true, 'Last name is required'],
+      minlength: [3, 'Last name must be at least 3 characters long'],
+    },
+    fullName: {
+      type: String,
+      required: [true, 'Full name is required'],
+      minlength: [7, 'Full name must be at least 7 characters long'],
+    },
+    email: {
+      type: String,
+      required: [true, 'Email is required'],
       validate: {
-        validator(v) {
-          return v > 0;
-        },
-        message: 'Store number must be greater than 0',
+        validator: (value) => emailRegExp.test(value),
+        message: 'Invalid email format',
       },
     },
-    open: {
+    emailVerification: {
       type: Boolean,
-      default: false,
+      required: [true, 'Email verification status is required'],
+    },
+    picture: {
+      type: String,
+      validate: {
+        validator: pictureValidator,
+        message: 'Invalid file extension or MIME type.',
+      },
     },
   },
   { timestamps: true }
 );
 
-const Product = mongoose.model('loginRegistration', ProductSchema);
+const Product = mongoose.model('loginregistration', ProductSchema);
 
-module.exports = Product;
+export default Product;
