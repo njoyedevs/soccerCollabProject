@@ -8,11 +8,13 @@ const BouncyBall = ({ angle = 4 }) => {
   const [ball, setBall] = useState({
     x: 100,
     y: 100,
-    radius: 30,
+    radius: 30, // Radius of the ball
     angle: Math.PI / angle,
-    speed: 15,
-    rotation: 5,
+    speed: 18, // Speed of the ball
+    rotation: 0,
   });
+
+  const [additionalRotation, setAdditionalRotation] = useState(0);
 
   const [containerDimensions, setContainerDimensions] = useState({
     width: window.innerWidth,
@@ -38,7 +40,7 @@ const BouncyBall = ({ angle = 4 }) => {
       newBall.x += Math.cos(newBall.angle) * newBall.speed;
       newBall.y += Math.sin(newBall.angle) * newBall.speed;
 
-      newBall.rotation = newBall.angle * (180 / Math.PI); // Calculate the rotation based on the ball's angle
+      newBall.rotation = newBall.angle * (180 / Math.PI) + additionalRotation;
 
       if (newBall.x - newBall.radius < 0) {
         newBall.x = newBall.radius;
@@ -63,7 +65,20 @@ const BouncyBall = ({ angle = 4 }) => {
     }, 1000 / 60);
 
     return () => clearInterval(animation);
+    // eslint-disable-next-line
   }, [ball, containerDimensions]);
+
+  useEffect(() => {
+    const updateAdditionalRotation = () => {
+      setAdditionalRotation((prevRotation) => prevRotation + 19); // Angle of Rotation
+    };
+
+    const rotationInterval = setInterval(() => {
+      updateAdditionalRotation();
+    }, 40); // Rotation Speed
+
+    return () => clearInterval(rotationInterval);
+  }, []);
 
   const ballStyle = {
     position: 'absolute',
@@ -73,8 +88,8 @@ const BouncyBall = ({ angle = 4 }) => {
     height: ball.radius * 2,
     backgroundImage: `url(${soccerBallImage})`,
     backgroundSize: 'cover',
-    transform: `rotate(${ball.rotation}deg)`, // Apply rotation
-    transformOrigin: 'center', // Rotate around the center
+    transform: `rotate(${ball.rotation}deg)`,
+    transformOrigin: 'center',
   };
 
   return (
