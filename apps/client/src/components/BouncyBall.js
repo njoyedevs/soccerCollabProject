@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import soccerBallImage from '../static/soccer_ball.png';
+// import soccerBallImage from '../static/images/soccer_ball.png';
+// import soccerBallImage from '../static/images/3d_gold_soccerball.png';
+import soccerBallImage from '../static/images/3d_gold_soccerball2.png';
+// import soccerBallImage from '../static/images/3d_yellow_black_football.png';
 
 const BouncyBall = ({ angle = 4 }) => {
   const [ball, setBall] = useState({
@@ -7,7 +10,8 @@ const BouncyBall = ({ angle = 4 }) => {
     y: 100,
     radius: 30,
     angle: Math.PI / angle,
-    speed: 10,
+    speed: 15,
+    rotation: 5,
   });
 
   const [containerDimensions, setContainerDimensions] = useState({
@@ -33,6 +37,8 @@ const BouncyBall = ({ angle = 4 }) => {
 
       newBall.x += Math.cos(newBall.angle) * newBall.speed;
       newBall.y += Math.sin(newBall.angle) * newBall.speed;
+
+      newBall.rotation = newBall.angle * (180 / Math.PI); // Calculate the rotation based on the ball's angle
 
       if (newBall.x - newBall.radius < 0) {
         newBall.x = newBall.radius;
@@ -67,6 +73,8 @@ const BouncyBall = ({ angle = 4 }) => {
     height: ball.radius * 2,
     backgroundImage: `url(${soccerBallImage})`,
     backgroundSize: 'cover',
+    transform: `rotate(${ball.rotation}deg)`, // Apply rotation
+    transformOrigin: 'center', // Rotate around the center
   };
 
   return (
