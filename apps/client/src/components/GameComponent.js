@@ -21,7 +21,7 @@ const Game = ({ apiKey, gameId, theme = '', refresh = '15', showErrors = 'false'
       data-host="v3.football.api-sports.io"
       data-key="${apiKey}"
       data-id="${gameId}"
-      data-theme="${theme}"
+      data-theme="dark"
       data-refresh="${refresh}"
       data-show-errors="${showErrors}"
       data-show-logos="${showLogos}">

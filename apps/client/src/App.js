@@ -5,8 +5,7 @@ import Game from './components/GameComponent';
 import NavBar from './components/NavBar';
 import BouncyBall from './components/BouncyBall';
 import WaveBackground from './components/WaveBackground';
-// const APIKEY = process.env.REACT_APP_APIKEY; = This works but I am keeping it off for now.  Feel free to toggle on and off.
-const APIKEY = '';
+const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
 
 function App() {
   return (
@@ -15,16 +14,15 @@ function App() {
       <header className="top-menu">
         <NavBar />
       </header>
-      <div className="middleRow">Middle R - Insert Here</div>
       <div className="bottomCol">
         <div className="leftBottomCol box">
-          <Standings apiKey={APIKEY} />
+          <Standings apiKey={API_FB_KEY} />
         </div>
-        <div className="centerBottomCol box">
-          <Games apiKey={APIKEY} />
+        <div className="centerBottomCol box ">
+          <Games apiKey={API_FB_KEY} />
         </div>
         <div className="rightBottomCol box">
-          <Game apiKey={APIKEY} gameId="718243" />
+          <Game apiKey={API_FB_KEY} gameId="718243" />
         </div>
       </div>
       <BouncyBall angle="3" />

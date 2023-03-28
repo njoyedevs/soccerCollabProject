@@ -5,7 +5,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
 import { createProduct } from '../services/internalApiService';
-const ClientID = process.env.REACT_APP_GOOGLE_ClientID;
+
+const GOOGLE_ClientID = process.env.REACT_APP_GOOGLE_ClientID;
 
 const NavBar = (props) => {
   const [user, setUser] = useState({});
@@ -35,7 +36,7 @@ const NavBar = (props) => {
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
-      client_id: ClientID,
+      client_id: GOOGLE_ClientID,
       callback: HandleCallbackResponse,
     });
 
@@ -69,7 +70,7 @@ const NavBar = (props) => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">About the Developers</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
           </Dropdown.Menu>
