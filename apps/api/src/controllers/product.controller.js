@@ -1,6 +1,6 @@
-const Product = require('../models/product.model');
+import Product from '../models/product.model.js';
 
-module.exports.index = (request, response) => {
+const index = (request, response) => {
   Product.find()
     .then((allProducts) => {
       response.json({ Person: allProducts });
@@ -10,7 +10,7 @@ module.exports.index = (request, response) => {
     });
 };
 
-module.exports.createProduct = (request, response, next) => {
+const createProduct = (request, response, next) => {
   Product.create(request.body)
     .then((product) => response.json(product))
     .catch((err) => {
@@ -20,7 +20,7 @@ module.exports.createProduct = (request, response, next) => {
 };
 
 // Need to test
-module.exports.createManyProducts = (request, response) => {
+const createManyProducts = (request, response) => {
   if (Array.isArray(request.body) === false) {
     throw new Error('The request body must be an array.');
   }
@@ -34,19 +34,19 @@ module.exports.createManyProducts = (request, response) => {
     .catch((err) => response.status(400).json({ ...err, message: err.message }));
 };
 
-module.exports.getAllProducts = (request, response) => {
+const getAllProducts = (request, response) => {
   Product.find({})
     .then((product) => response.json(product))
     .catch((err) => response.status(400).json({ ...err, message: err.message }));
 };
 
-module.exports.getProduct = (request, response) => {
+const getProduct = (request, response) => {
   Product.findOne({ _id: request.params.id })
     .then((product) => response.json(product))
     .catch((err) => response.status(400).json({ ...err, message: err.message }));
 };
 
-module.exports.updateProduct = (request, response, next) => {
+const updateProduct = (request, response, next) => {
   console.log('Request received at /api/edit/:id');
 
   Product.findOneAndUpdate({ _id: request.params.id }, request.body, {
@@ -67,8 +67,16 @@ module.exports.updateProduct = (request, response, next) => {
     });
 };
 
-module.exports.deleteProduct = (request, response) => {
+const deleteProduct = (request, response) => {
   Product.deleteOne({ _id: request.params.id })
     .then((deleteConfirmation) => response.json(deleteConfirmation))
     .catch((err) => response.status(400).json({ ...err, message: err.message }));
+};
+
+export default {
+  getAllProducts,
+  getProduct,
+  updateProduct,
+  createProduct,
+  deleteProduct,
 };

@@ -7,7 +7,7 @@ const BouncyBall = ({ angle = 4 }) => {
     y: 100,
     radius: 30,
     angle: Math.PI / angle,
-    speed: 20,
+    speed: 10,
   });
 
   const [containerDimensions, setContainerDimensions] = useState({
