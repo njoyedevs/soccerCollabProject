@@ -5,12 +5,12 @@ import Game from './components/GameComponent';
 import NavBar from './components/NavBar';
 import BouncyBall from './components/BouncyBall';
 import WaveBackground from './components/WaveBackground';
-
-const APIKEY = '';
+const APIKEY = process.env.REACT_APP_APIKEY;
 
 function App() {
   return (
     <div className="App">
+      {/* <div id="signInDiv"></div> */}
       <header className="top-menu">
         <NavBar />
       </header>
@@ -27,12 +27,12 @@ function App() {
         </div>
       </div>
       <BouncyBall angle="4" />
+      <BouncyBall angle="8" />
       <BouncyBall angle="2" />
       <BouncyBall angle="6" />
       <BouncyBall angle="3" />
       <BouncyBall angle="7" />
       <BouncyBall angle="5" />
-      <BouncyBall angle="8" />
       <BouncyBall angle="9" />
       <WaveBackground />
     </div>
