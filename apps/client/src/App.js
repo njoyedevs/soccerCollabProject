@@ -15,17 +15,17 @@ function App() {
       <header className="top-menu">
         <NavBar />
       </header>
-      <div className="middleRow">Middle R - Insert Here</div>
       <div className="bottomCol">
         <div className="leftBottomCol box">
           <Standings apiKey={APIKEY} />
         </div>
-        <div className="centerBottomCol box">
+        <div className="centerBottomCol box ">
           <Games apiKey={APIKEY} />
         </div>
         <div className="rightBottomCol box">
           <Game apiKey={APIKEY} gameId="718243" />
         </div>
+
       </div>
       <BouncyBall angle="3" />
       <BouncyBall angle="4" />

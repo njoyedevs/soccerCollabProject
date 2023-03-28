@@ -2,10 +2,10 @@ import React from 'react';
 
 const Games = ({
   apiKey,
-  date = '',
-  league = '',
+  date = "",
+  league = '', //[1, 2, 3, 4, 5, 6, 9, 10, 15, 39, 45, 61, 66, 78, 88, 135, 140, 143, 253, 307]
   season = '',
-  theme = '',
+  theme = 'dark',
   refresh = '15',
   showToolbar = 'true',
   showErrors = 'false',
@@ -14,6 +14,8 @@ const Games = ({
   modalStandings = 'true',
   modalShowLogos = 'true',
 }) => {
+  // const leagueIds = league.join(",");
+
   const iframeContent = `
   <!DOCTYPE html>
   <html lang="en">
@@ -33,7 +35,7 @@ const Games = ({
     <div id="wg-api-football-games"
       data-host="v3.football.api-sports.io"
       data-key="${apiKey}"
-      data-date="${date}"
+      data-date= "${date}"
       data-league="${league}"
       data-season="${season}"
       data-theme="${theme}"
