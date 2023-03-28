@@ -8,7 +8,6 @@ import WaveBackground from './components/WaveBackground';
 const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
 
 function App() {
-
   return (
     <div className="App">
       {/* <div id="signInDiv"></div> */}
@@ -25,7 +24,6 @@ function App() {
         <div className="rightBottomCol box">
           <Game apiKey={API_FB_KEY} gameId="718243" />
         </div>
-
       </div>
       <BouncyBall angle="3" />
       <BouncyBall angle="4" />
