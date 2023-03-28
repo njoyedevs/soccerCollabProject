@@ -5,7 +5,8 @@ import Game from './components/GameComponent';
 import NavBar from './components/NavBar';
 import BouncyBall from './components/BouncyBall';
 import WaveBackground from './components/WaveBackground';
-const APIKEY = process.env.REACT_APP_APIKEY;
+// const APIKEY = process.env.REACT_APP_APIKEY; = This works but I am keeping it off for now.  Feel free to toggle on and off.
+const APIKEY = '';
 
 function App() {
   return (
