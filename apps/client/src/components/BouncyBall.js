@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import soccerBallImage from '../static/soccer_ball.png';
+// import soccerBallImage from '../static/images/soccer_ball.png';
+// import soccerBallImage from '../static/images/3d_gold_soccerball.png';
+import soccerBallImage from '../static/images/3d_gold_soccerball2.png';
+// import soccerBallImage from '../static/images/3d_yellow_black_football.png';
 
 const BouncyBall = ({ angle = 4 }) => {
   const [ball, setBall] = useState({
     x: 100,
     y: 100,
-    radius: 30,
+    radius: 30, // Radius of the ball
     angle: Math.PI / angle,
-    speed: 20,
+    speed: 10, // Speed of the ball
+    rotation: 0,
   });
+
+  const [additionalRotation, setAdditionalRotation] = useState(0);
 
   const [containerDimensions, setContainerDimensions] = useState({
     width: window.innerWidth,
@@ -34,6 +40,8 @@ const BouncyBall = ({ angle = 4 }) => {
       newBall.x += Math.cos(newBall.angle) * newBall.speed;
       newBall.y += Math.sin(newBall.angle) * newBall.speed;
 
+      newBall.rotation = newBall.angle * (180 / Math.PI) + additionalRotation;
+
       if (newBall.x - newBall.radius < 0) {
         newBall.x = newBall.radius;
         newBall.angle = Math.PI - newBall.angle;
@@ -57,7 +65,20 @@ const BouncyBall = ({ angle = 4 }) => {
     }, 1000 / 60);
 
     return () => clearInterval(animation);
+    // eslint-disable-next-line
   }, [ball, containerDimensions]);
+
+  useEffect(() => {
+    const updateAdditionalRotation = () => {
+      setAdditionalRotation((prevRotation) => prevRotation + 19); // Angle of Rotation
+    };
+
+    const rotationInterval = setInterval(() => {
+      updateAdditionalRotation();
+    }, 40); // Rotation Speed
+
+    return () => clearInterval(rotationInterval);
+  }, []);
 
   const ballStyle = {
     position: 'absolute',
@@ -67,6 +88,8 @@ const BouncyBall = ({ angle = 4 }) => {
     height: ball.radius * 2,
     backgroundImage: `url(${soccerBallImage})`,
     backgroundSize: 'cover',
+    transform: `rotate(${ball.rotation}deg)`,
+    transformOrigin: 'center',
   };
 
   return (
