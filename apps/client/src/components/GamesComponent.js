@@ -2,7 +2,7 @@ import React from 'react';
 
 const Games = ({
   apiKey,
-  date = "",
+  date = '',
   league = '', //[1, 2, 3, 4, 5, 6, 9, 10, 15, 39, 45, 61, 66, 78, 88, 135, 140, 143, 253, 307]
   season = '',
   theme = 'dark',

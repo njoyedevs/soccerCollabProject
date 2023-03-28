@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Standings = ({
   apiKey,
   league,
@@ -10,7 +9,6 @@ const Standings = ({
   showErrors = 'false',
   showLogos = 'true',
 }) => {
-
 
   const iframeContent = `${`
   <!DOCTYPE html>

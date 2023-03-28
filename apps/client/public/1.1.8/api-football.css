@@ -2,7 +2,7 @@
 Version : 1.1.8
  */
 :root {
-  --font: "Raleway", sans-serif;
+  --font: 'Raleway', sans-serif;
 
   --background-color: #222222;
   --background-color-header: #121212;
@@ -22,7 +22,7 @@ Version : 1.1.8
   /* 0px for no border */
   --primary-padding: 3px 3px;
   --primary-line-height: 15px;
-  --secondary-padding: .4rem;
+  --secondary-padding: 0.4rem;
   /* For Headers Only */
 
   --button-info-font-size: 9px;
@@ -107,7 +107,7 @@ td {
   border-bottom: var(--border-bottom);
 }
 
-td>span {
+td > span {
   vertical-align: middle;
 }
 
@@ -140,7 +140,7 @@ td>span {
   color: var(--color-text-header);
 }
 
-.api_football_header>span {
+.api_football_header > span {
   padding-left: 5px;
   vertical-align: middle;
 }
@@ -386,7 +386,7 @@ td>span {
 }
 
 .api_football_loader:after {
-  content: " ";
+  content: ' ';
   display: block;
   width: 45px;
   height: 45px;
@@ -490,13 +490,13 @@ td>span {
   content: ' ';
   vertical-align: middle;
   display: inline-block;
-  background-image: url("sprite.svg");
+  background-image: url('sprite.svg');
   background-repeat: no-repeat;
   background-size: 13em 49.1em;
 }
 
 .no-svg .icon-svg:before {
-  background-image: url("sprite.svg");
+  background-image: url('sprite.svg');
 }
 
 .icon-svg.icon-corner-flag:before {
@@ -631,7 +631,7 @@ td>span {
 
 .api_football_grid {
   position: relative;
-  background-image: url("soccer_field.png");
+  background-image: url('soccer_field.png');
   background-size: 100% 100%;
 }
 
@@ -645,7 +645,7 @@ td>span {
   position: relative;
   color: var(--background-color);
   border-radius: 50px;
-  transform: translateY(-50%)translateX(75%);
+  transform: translateY(-50%) translateX(75%);
 }
 
 .api_football_color_theme {
@@ -692,7 +692,6 @@ td>span {
 }
 
 @media (min-width: 680px) {
-
   .api_football_modal_content {
     margin: 5% auto;
     width: 75%;
@@ -700,7 +699,6 @@ td>span {
 }
 
 @media (min-width: 1024px) {
-
   .api_football_modal_content {
     margin: 5% auto;
     width: 50%;

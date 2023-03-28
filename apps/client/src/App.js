@@ -10,6 +10,7 @@ import Leagues from './components/LeaguesComponent';
 const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
 
 function App() {
+
   const [desiredLeague, setDesiredLeague] = useState('39');
 
   const handleLeagueSelected = (selectedLeague) => {
@@ -17,6 +18,7 @@ function App() {
     setDesiredLeague(selectedLeague);
     // Do something with the selected league here
   };
+
 
   return (
     <div className="App">
@@ -34,7 +36,6 @@ function App() {
         <div className="rightBottomCol box">
           <Standings apiKey={API_FB_KEY} league={desiredLeague}/>
         </div>
-
       </div>
       <BouncyBall angle="3" />
       <BouncyBall angle="4" />
