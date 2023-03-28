@@ -30,9 +30,5 @@
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ]
-  },
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "three": "^0.134.0"
   }
 }
