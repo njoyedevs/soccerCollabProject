@@ -10,7 +10,7 @@ const BouncyBall = ({ angle = 4 }) => {
     y: 100,
     radius: 30, // Radius of the ball
     angle: Math.PI / angle,
-    speed: 18, // Speed of the ball
+    speed: 10, // Speed of the ball
     rotation: 0,
   });
 

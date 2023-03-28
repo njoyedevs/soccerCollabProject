@@ -11,7 +11,7 @@ const NavBar = (props) => {
   const [user, setUser] = useState({});
 
   function HandleCallbackResponse(response) {
-    // console.log('Encoded JWT ID token: ' + response.credential);
+    console.log('Encoded JWT ID token: ' + response.credential);
     var userObject = jwt_decode(response.credential);
 
     console.log(userObject);
