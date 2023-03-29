@@ -9,7 +9,6 @@ const Standings = ({
   showErrors = 'false',
   showLogos = 'true',
 }) => {
-
   const iframeContent = `${`
   <!DOCTYPE html>
   <html lang="en">
@@ -62,4 +61,3 @@ const Standings = ({
 };
 
 export default Standings;
-

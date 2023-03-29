@@ -4,13 +4,13 @@ import React, { useState, useEffect } from 'react';
 import soccerBallImage from '../static/images/3d_gold_soccerball2.png';
 // import soccerBallImage from '../static/images/3d_yellow_black_football.png';
 
-const BouncyBall = ({ angle = 4 }) => {
+const BouncyBall = ({ angle = 4, sliderValue = 10 }) => {
   const [ball, setBall] = useState({
     x: 100,
     y: 100,
     radius: 30, // Radius of the ball
     angle: Math.PI / angle,
-    speed: 10, // Speed of the ball
+    speed: sliderValue, // Speed of the ball
     rotation: 0,
   });
 
@@ -20,6 +20,13 @@ const BouncyBall = ({ angle = 4 }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+
+  useEffect(() => {
+    setBall((prevBall) => ({
+      ...prevBall,
+      speed: sliderValue,
+    }));
+  }, [sliderValue]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,7 +69,7 @@ const BouncyBall = ({ angle = 4 }) => {
 
     const animation = setInterval(() => {
       updatePosition();
-    }, 1000 / 60);
+    }, 1000 / 60); // Updating the location of ball n times per second (1000ms)
 
     return () => clearInterval(animation);
     // eslint-disable-next-line
