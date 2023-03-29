@@ -39,8 +39,8 @@ const Game = ({ apiKey, gameId, theme = '', refresh = '15', showErrors = 'false'
       title="Football Game Widget"
       srcDoc={iframeContent}
       style={{
-        width: '100%',
-        height: '500px', // Adjust the height according to your needs
+        width: '30rem',
+        height: '32rem', // Adjust the height according to your needs
         border: 'none',
         overflow: 'auto',
       }}

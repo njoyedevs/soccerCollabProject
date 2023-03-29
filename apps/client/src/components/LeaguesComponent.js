@@ -19,8 +19,10 @@ const Leagues = (props) => {
     container: {
       backgroundColor: '#222222',
       padding: '10px',
-      borderRadius: '10px',
-      boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.1)',
+      // borderRadius: '10px',
+      boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.1)',
+      margin: '0rem .5rem 1rem 0rem',
+      width: '15rem',
     },
   };
   const leagues = [
