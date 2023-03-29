@@ -11,8 +11,7 @@ const Leagues = (props) => {
   };
   useEffect(() => {
     // Do something when the league state changes, e.g., fetch new data, update the UI, etc.
-    console.log('League changed to:', league);
-
+    // console.log('League changed to:', league);
     // If needed, you can also clean up any resources or side effects here using a cleanup function.
   }, [league]); // Add 'league' as a dependency
 

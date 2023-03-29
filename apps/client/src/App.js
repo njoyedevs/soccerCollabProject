@@ -15,7 +15,7 @@ function App() {
   const [desiredLeague, setDesiredLeague] = useState('39');
 
   const handleLeagueSelected = (selectedLeague) => {
-    console.log('Selected league in ParentComponent:', selectedLeague);
+    // console.log('Selected league in ParentComponent:', selectedLeague);
     setDesiredLeague(selectedLeague);
     // Do something with the selected league here
   };
