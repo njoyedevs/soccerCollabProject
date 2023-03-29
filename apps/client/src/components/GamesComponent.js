@@ -60,10 +60,11 @@ const Games = ({
       title="Football Games Widget"
       srcDoc={iframeContent}
       style={{
-        width: '100%',
-        height: '500px', // Adjust the height according to your needs
+        width: '25rem',
+        height: '32rem', // Adjust the height according to your needs
         border: 'none',
         overflow: 'auto',
+        margin: '0rem .5rem 0rem 0rem',
       }}
     ></iframe>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faFutbol, faStar, faNewspaper } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faFutbol, faStar, faNewspaper, faVideo } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
@@ -27,7 +27,20 @@ const NavBar = (props) => {
       picture: userObject.picture,
     };
 
-    createProduct(newObject);
+    createProduct(newObject)
+      .then((result) => {
+        if (result.error) {
+          console.log(result.error);
+          // Show an error message to the user using your preferred method, e.g., an alert or a toast notification
+        } else {
+          // Handle the successful creation of a new product
+        }
+      })
+      .catch((err) => {
+        console.error('Error creating product:', err);
+        // Show a generic error message to the user if the promise was rejected
+      });
+
     // console.log(newObject);
 
     document.getElementById('signInDiv').hidden = true; // - Turn Back on For Button
@@ -57,6 +70,24 @@ const NavBar = (props) => {
     document.getElementById('signInDiv').hidden = false; // Turn Back on For Button
   }
 
+  const handleScoresClick = () => {
+    if (props.onScoresClick) {
+      props.onScoresClick();
+    }
+  };
+
+  const handleMatchesClick = () => {
+    if (props.onMatchesClick) {
+      props.onMatchesClick();
+    }
+  };
+
+  const handleVideosClick = () => {
+    if (props.onVideosClick) {
+      props.onVideosClick();
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="dropDown">
@@ -79,23 +110,29 @@ const NavBar = (props) => {
           <span>FootyStats</span>
         </div>
       </div>
-      <div className="icons">
+      <div className="icons" onClick={handleScoresClick}>
         <span>
           <FontAwesomeIcon icon={faFutbol} spin />
         </span>
         <span>Scores</span>
       </div>
-      <div className="icons">
+      <div className="icons" onClick={handleMatchesClick}>
         <span>
           <FontAwesomeIcon icon={faStar} spin />
         </span>
-        <span>Favorites</span>
+        <span>Matches</span>
       </div>
       <div className="icons">
         <span>
           <FontAwesomeIcon icon={faNewspaper} spin />
         </span>
         <span>News</span>
+      </div>
+      <div className="icons" onClick={handleVideosClick}>
+        <span>
+          <FontAwesomeIcon icon={faVideo} style={{ color: '#ffffff' }} spin />
+        </span>
+        <span>Videos</span>
       </div>
       {/* <div id="signInDiv"></div> - Turn Back on For Button */}
       {/* className="btn btn-outline-light .bg-dark" - If needing the same styling as logout*/}

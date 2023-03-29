@@ -10,12 +10,28 @@ const index = (request, response) => {
     });
 };
 
+// const createProduct = (request, response, next) => {
+//   Product.create(request.body)
+//     .then((product) => response.json(product))
+//     .catch((err) => {
+//       // response.status(400).json({...err, message: err.message })}
+//       next(err);
+//     });
+// };
+
 const createProduct = (request, response, next) => {
   Product.create(request.body)
-    .then((product) => response.json(product))
+    .then((product) => {
+      response.json(product);
+    })
     .catch((err) => {
-      // response.status(400).json({...err, message: err.message })}
-      next(err);
+      if (err.name === 'MongoServerError' && err.code === 11000) {
+        // Duplicate email error
+        response.status(409).json({ message: 'Email already exists' });
+      } else {
+        // Other errors
+        next(err);
+      }
     });
 };
 

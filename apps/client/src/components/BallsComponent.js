@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 import BouncyBall from './BouncyBall';
@@ -43,8 +42,14 @@ const BallsComponent = () => {
   return (
     <>
       <div className="bounceButton">
-        <Button
-          style={{ backgroundColor: 'black', border: 'none', margin: '0rem 0rem 0rem .3rem', padding: '0rem' }}
+        <button
+          style={{
+            color: 'white',
+            backgroundColor: 'transparent',
+            border: 'none',
+            margin: '0rem 0rem 0rem .3rem',
+            padding: '0rem',
+          }}
           onClick={toggleBallsVisibility}
         >
           {ballsVisible ? (
@@ -53,7 +58,7 @@ const BallsComponent = () => {
             <FontAwesomeIcon icon={faFutbol} bounce style={{ '--fa-secondary-color': '#ebc400' }} />
           )}
           <p>Bounce Me</p>
-        </Button>
+        </button>
         {ballsVisible && renderBouncyBalls()}
       </div>
       <div className="sliderContainer">
