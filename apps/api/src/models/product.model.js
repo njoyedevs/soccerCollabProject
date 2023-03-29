@@ -28,6 +28,7 @@ const ProductSchema = new mongoose.Schema(
         validator: (value) => emailRegExp.test(value),
         message: 'Invalid email format',
       },
+      unique: true,
     },
     emailVerification: {
       type: Boolean,

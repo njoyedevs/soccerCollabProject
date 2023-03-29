@@ -1,7 +1,7 @@
 const APIKEY = process.env.APIKEY;
 
 var myHeaders = new Headers();
-myHeaders.append('x-rapidapi-key', 'b7a8474c1f81e9ce7295f98ce33eb5f4');
+myHeaders.append('x-rapidapi-key', '');
 myHeaders.append('x-rapidapi-host', 'v3.football.api-sports.io');
 
 let endpoint = 'standings?league=39&season=2019';
