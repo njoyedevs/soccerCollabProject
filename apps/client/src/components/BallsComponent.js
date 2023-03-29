@@ -47,7 +47,7 @@ const BallsComponent = () => {
             color: 'white',
             backgroundColor: 'transparent',
             border: 'none',
-            margin: '0rem 0rem 0rem .3rem',
+            margin: '0.4rem 0rem 0rem .3rem',
             padding: '0rem',
           }}
           onClick={toggleBallsVisibility}
@@ -57,7 +57,7 @@ const BallsComponent = () => {
           ) : (
             <FontAwesomeIcon icon={faFutbol} bounce style={{ '--fa-secondary-color': '#ebc400' }} />
           )}
-          <p>Bounce Me</p>
+          <p style={{fontSize:12}}>Bounce Me</p>
         </button>
         {ballsVisible && renderBouncyBalls()}
       </div>

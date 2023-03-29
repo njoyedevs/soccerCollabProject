@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faFutbol, faStar, faNewspaper, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faFutbol, faStar, faNewspaper, faVideo, } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
@@ -115,25 +115,26 @@ const NavBar = (props) => {
         <span>
           <FontAwesomeIcon icon={faFutbol} spin />
         </span>
-        <span>Scores</span>
+        <button type="button" class="btn btn-link">Matches</button>
       </div>
       <div className="icons" onClick={handleMatchesClick}>
         <span>
           <FontAwesomeIcon icon={faStar} spin />
         </span>
-        <span>Matches</span>
+        <button type="button" class="btn btn-link">Standings</button>
       </div>
       <div className="icons">
         <span>
           <FontAwesomeIcon icon={faNewspaper} spin />
         </span>
-        <span>News</span>
+        <button type="button" class="btn btn-link">News</button>
       </div>
       <div className="icons" onClick={handleVideosClick}>
         <span>
           <FontAwesomeIcon icon={faVideo} style={{ color: '#ffffff' }} spin />
         </span>
-        <span>Videos</span>
+        {/* <span>Videos</span> */}
+        <button type="button" class="btn btn-link">Videos</button>
       </div>
       {/* <div id="signInDiv"></div> - Turn Back on For Button */}
       {/* className="btn btn-outline-light .bg-dark" - If needing the same styling as logout*/}
