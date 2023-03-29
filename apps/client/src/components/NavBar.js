@@ -5,6 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
 import { createProduct } from '../services/internalApiService';
+import { Link } from'react-router-dom';
 
 const GOOGLE_ClientID = process.env.REACT_APP_GOOGLE_ClientID;
 
@@ -101,7 +102,7 @@ const NavBar = (props) => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">About the Developers</Dropdown.Item>
+            <Dropdown.Item ><Link to={`/team`}>About the Developers</Link> </Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
           </Dropdown.Menu>
