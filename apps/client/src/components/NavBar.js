@@ -81,36 +81,27 @@ const NavBar = (props) => {
       </div>
       <div className="icons">
         <span>
-          <FontAwesomeIcon icon={faFutbol} />
+          <FontAwesomeIcon icon={faFutbol} spin />
         </span>
         <span>Scores</span>
       </div>
       <div className="icons">
         <span>
-          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} spin />
         </span>
         <span>Favorites</span>
       </div>
       <div className="icons">
         <span>
-          <FontAwesomeIcon icon={faNewspaper} />
+          <FontAwesomeIcon icon={faNewspaper} spin />
         </span>
         <span>News</span>
       </div>
-      {/* <button type="button" className="btn btn-outline-light .bg-dark " id="login-button">
-        Login/Reg
-      </button> */}
       {/* <div id="signInDiv"></div> - Turn Back on For Button */}
       {/* className="btn btn-outline-light .bg-dark" - If needing the same styling as logout*/}
       <button type="button" id="signInDiv" className="login-button"></button>
       {Object.keys(user).length !== 0 && (
         <div>
-          {/* <button onClick={(event) => handleSignOut(event)}>Sign Out</button> */}
-          {/* <button type="button"className="btn btn-outline-light .bg-dark " id="login-button" onClick={(event) => handleSignOut(event)}>
-            Sign Out
-          </button>
-          <img src={user.picture} alt='Profile'></img>
-          <h3>{user.name}</h3> */}
           <SignOutButton user={user} handleSignOut={handleSignOut} />
         </div>
       )}
