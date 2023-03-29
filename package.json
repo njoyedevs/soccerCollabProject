@@ -30,5 +30,8 @@
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "react-router-dom": "^6.9.0"
   }
 }
