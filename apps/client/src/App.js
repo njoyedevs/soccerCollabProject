@@ -45,7 +45,7 @@ function App() {
           onVideosClick={handleVideosClick}
         />
       </header>
-      <div className="middleCol">
+      <div className="middleRow">
         <BallsComponent />
       </div>
       <div className="bottomCol">
