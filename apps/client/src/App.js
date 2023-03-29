@@ -9,6 +9,7 @@ import BallsComponent from './components/BallsComponent';
 import Leagues from './components/LeaguesComponent';
 
 const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
+// const API_FB_KEY = ""
 
 function App() {
   const [desiredLeague, setDesiredLeague] = useState('39');
@@ -37,6 +38,49 @@ function App() {
         <div className="rightBottomCol box">
           <Standings apiKey={API_FB_KEY} league={desiredLeague} />
         </div>
+        <div className="iFrame">
+          <iframe
+            src="https://www.scorebat.com/embed/?token=NzE2NjRfMTY4MDA1NTM2OV9iNjAzMTg2YmYyZmIyNjQxNTllNjkwYWRkNjcwMDJlZTU1N2M0MTMy"
+            width="600"
+            height="760"
+            // allowFullScreen
+            allow="autoplay; fullscreen"
+            style={{
+              width: '100%',
+              height: '30rem',
+              overflow: 'hidden',
+              // display: 'block',
+            }}
+            className="_scorebatEmbeddedPlayer_"
+            title="Scorebat Embedded Player"
+          ></iframe>
+        </div>
+        {/* <div
+        style={{
+          width: '30%',
+          height: '30%',
+          position: 'absolute',
+          paddingBottom: '0%',
+          background: '#000',
+        }}
+      >
+        <iframe
+        src="https://www.scorebat.com/embed/v/641ec7bfa111b/"
+        width="100%"
+        height="100%"
+        // allowfullscreen
+        allow='autoplay; fullscreen'
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          left: '0px',
+          top: '0px',
+          overflow: 'hidden',
+        }}
+        title="IndividualGame"
+        ></iframe>
+      </div> */}
       </div>
       <WaveBackground />
     </div>
