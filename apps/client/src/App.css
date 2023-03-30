@@ -318,3 +318,34 @@
   color: #01d099;
   padding: 0.2rem;
 }
+
+/* If you don't want to use an image you can use an animated spinner instead: */
+/* .chatGPT4-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: chatGPT4-spin 1s linear infinite;
+}
+
+@keyframes chatGPT4-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+/* If you want to use an image as spinner */
+.chatGPT4-spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  animation: chatGPT4-spin-image 1s linear infinite;
+}
+
+@keyframes chatGPT4-spin-image {
+  100% {
+    transform: rotate(360deg);
+  }
+}

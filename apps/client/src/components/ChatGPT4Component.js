@@ -6,6 +6,7 @@ import soccer_fan2 from '../static/images/soccer_fan2.png';
 import popout_icon from '../static/images/popout_icon.png';
 import close_icon from '../static/images/close_icon.png';
 import submit_icon from '../static/images/submit_icon.png';
+import spinner_icon from '../static/images/spinner_icon.png';
 
 const API_FB_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 // const API_FB_KEY = ''
@@ -98,9 +99,8 @@ const ChatGPT4 = (props) => {
           ))}
           {isTyping && (
             <div className="chatGPT4-typing">
-              <span className="chatGPT4-dot">.</span>
-              <span className="chatGPT4-dot">.</span>
-              <span className="chatGPT4-dot">.ChatGPT-4 Soccer Expert is responding...</span>
+              <img className="chatGPT4-spinner" src={spinner_icon} alt="spinner" />
+              <span className="chatGPT4-dot">...thinking...</span>
             </div>
           )}
         </div>

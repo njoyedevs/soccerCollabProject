@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import soccerBallImage from '../static/images/soccer_ball.png';
 import soccerBallImage from '../static/images/3d_gold_soccerball2.png';
+// import soccerBallImage from '../static/images/dall_e_soccer_ball.png';
 
 const BouncyBall = ({ angle = 4, sliderValue = 10 }) => {
   const [ball, setBall] = useState({
