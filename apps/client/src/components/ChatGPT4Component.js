@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Configuration, OpenAIApi } from 'openai';
 import openai_icon from '../static/images/openai_icon.png';
 import chatbot_icon from '../static/images/dalle_chatbot.png';
@@ -21,6 +21,9 @@ const ChatGPT4 = (props) => {
   const [userInput, setUserInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
+  const messagesContainerRef = useRef(null);
+  const messagesEndRef = useRef(null);
+  const latestMessageRef = useRef(null);
 
   const chatWithGPT4 = (input) => {
     setIsTyping(true);
@@ -44,6 +47,9 @@ const ChatGPT4 = (props) => {
             { role: 'assistant', content: ai.data.choices[0].message.content },
           ]);
           setIsTyping(false);
+          setTimeout(() => {
+            latestMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 0);
         }
       })
       .catch((error) => {
@@ -58,6 +64,9 @@ const ChatGPT4 = (props) => {
     if (userInput.trim()) {
       chatWithGPT4(userInput);
       setUserInput('');
+      setTimeout(() => {
+        messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      }, 0);
     }
   };
 
@@ -86,9 +95,13 @@ const ChatGPT4 = (props) => {
           <input onClick={handlePopoutClick} className="chatGPT4-popout" type="image" src={popout_icon} alt="Submit" />
         </div>
         {/* Messages */}
-        <div className="chatGPT4-messages">
+        <div className="chatGPT4-messages" ref={messagesContainerRef}>
           {messages.map((message, index) => (
-            <div key={index} className={`chatGPT4-message chatGPT4-${message.role}`}>
+            <div
+              key={index}
+              ref={index === messages.length - 1 ? latestMessageRef : null}
+              className={`chatGPT4-message chatGPT4-${message.role}`}
+            >
               <img
                 className="chatImages"
                 src={message.role === 'user' ? props.profileImg || soccer_fan2 : chatbot_icon}
@@ -103,6 +116,8 @@ const ChatGPT4 = (props) => {
               <span className="chatGPT4-dot">...thinking...</span>
             </div>
           )}
+          <div ref={messagesEndRef} />
+          <div />
         </div>
         {/* Input */}
         <div className="chatGPT4-input">
