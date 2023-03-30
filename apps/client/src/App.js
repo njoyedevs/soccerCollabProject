@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Team } from './views/aboutDevelopers.js';
+import Team from './views/aboutDevelopers.js';
 import Home from './components/Home.js';
 import { NotFound } from './views/NotFound.js';
 

@@ -102,9 +102,8 @@ const NavBar = (props) => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item ><Link to={`/team`}>About the Developers</Link> </Dropdown.Item>
+            <Dropdown.Item ><Link to={`/team`} style={{textDecoration: "none", color:"black"}}>About the Developers</Link> </Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <div className="footyStats">
