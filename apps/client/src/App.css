@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 2rem;
+  margin: 0rem 2rem 0rem 0rem;
 }
 
 .top-menu {
@@ -79,6 +79,47 @@
   justify-content: center;
 }
 
+.spin {
+  animation: spin 2s linear infinite;
+  background-color: white;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.iconImg {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 20px;
+}
+
+/* Add this to your CSS file */
+.bounce {
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
 .icons {
   margin-left: 10px;
   display: flex;
@@ -131,14 +172,22 @@
   margin-right: 0.5rem;
 }
 
-.lastCol {
+.bottomCol {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
 
-.bottomCol {
+.centerBottomCol {
+  margin: 0rem 2rem 0.3rem 0rem;
+}
+
+.videoBottomCol {
+  /* margin: 0rem 2rem 0rem 0rem ; */
+}
+
+.lastCol {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,45 +317,4 @@
   /* color: #b08af7; */
   color: #01d099;
   padding: 0.2rem;
-}
-
-.spin {
-  animation: spin 2s linear infinite;
-  background-color: white;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.iconImg {
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 20px;
-}
-
-/* Add this to your CSS file */
-.bounce {
-  animation: bounce 1s ease infinite;
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
 }

@@ -27,13 +27,13 @@ const ChatGPT4 = (props) => {
       .createChatCompletion({
         model: 'gpt-4',
         messages: [
-          { role: 'system', content: 'You are a soccer expert.' },
+          { role: 'system', content: 'You are a soccer expert. Don"t talk about anything accept soccer.' },
           ...messages,
           { role: 'user', content: input },
         ],
         temperature: 0,
         n: 1,
-        max_tokens: 1500,
+        max_tokens: 150,
       })
       .then((ai) => {
         if (ai.data.choices[0].message) {
