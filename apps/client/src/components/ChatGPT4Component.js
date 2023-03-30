@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Configuration, OpenAIApi } from 'openai';
-import chatGPT_icon from '../static/images/chatGPT_icon.png';
+import openai_icon from '../static/images/openai_icon.png';
 import chatbot_icon from '../static/images/dalle_chatbot.png';
 import soccer_fan2 from '../static/images/soccer_fan2.png';
 import popout_icon from '../static/images/popout_icon.png';
@@ -33,7 +33,7 @@ const ChatGPT4 = (props) => {
         ],
         temperature: 0,
         n: 1,
-        max_tokens: 15,
+        max_tokens: 1500,
       })
       .then((ai) => {
         if (ai.data.choices[0].message) {
@@ -75,7 +75,7 @@ const ChatGPT4 = (props) => {
       <div className="chatGPT4-window">
         {/* Chat header */}
         <div className="chatGPT4-header">
-          <img src={chatGPT_icon} alt="Bot" className="chatGPT4-bot-image" />
+          <img src={openai_icon} alt="Bot" className="chatGPT4-bot-image" />
           <div className="chatGPT4-bot-name">ChatGPT-4 Soccer Expert</div>
           {/* <button className="chatGPT4-popout">{popout_icon}</button> */}
           <input onClick={handlePopoutClick} className="chatGPT4-popout" type="image" src={popout_icon} alt="Submit" />
@@ -96,7 +96,7 @@ const ChatGPT4 = (props) => {
             <div className="chatGPT4-typing">
               <span className="chatGPT4-dot">.</span>
               <span className="chatGPT4-dot">.</span>
-              <span className="chatGPT4-dot">.</span>
+              <span className="chatGPT4-dot">.ChatGPT-4 Soccer Expert is responding...</span>
             </div>
           )}
         </div>
@@ -114,11 +114,12 @@ const ChatGPT4 = (props) => {
         </div>
         {/* Privacy message */}
         <div className="chatGPT4-privacy">
-          ChatGPT4 Bot by FootyStats | By chatting, you consent to the storing of your messages according to our{' '}
-          <a href="https://example.com/privacy" target="_blank" rel="noreferrer">
+          ChatGPT4 Bot by FootyStats | At this time, we are not saving any data submitted or returned from OpenAI{' '}
+          {/* ChatGPT4 Bot by FootyStats | By chatting, you consent to the storing of your messages according to our{' '} */}
+          {/* <a href="https://example.com/privacy" target="_blank" rel="noreferrer">
             privacy policy
           </a>
-          .
+          . */}
         </div>
       </div>
       <input onClick={handleCloseClick} className="chatGPT-closeBtn" type="image" src={close_icon} alt="Close" />

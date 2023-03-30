@@ -210,26 +210,33 @@
   width: 3rem;
   height: 3rem;
   border-radius: 20px;
-  margin: 0rem 0.3rem 0rem 0rem;
+  margin: 0.5rem 0.5rem 0rem 0rem;
+}
+
+#wg-football-dropbtn {
+  background-color: #b08af7;
 }
 
 .chatGPT4-popout {
   width: 3rem;
   height: 2rem;
-  background-color: #b08af7;
+  /* background-color: #b08af7; */
+  background-color: #01d099;
 }
 
 .chatGPT-closeBtn {
   width: 2rem;
   height: 2rem;
-  background-color: #b08af7;
+  /* background-color: #b08af7; */
+  background-color: #01d099;
   margin: 0.5rem 0rem 0rem 0rem;
 }
 
 .chatGPT-submitBtn {
   width: 3rem;
   height: 3rem;
-  background-color: #b08af7;
+  /* background-color: #b08af7; */
+  background-color: #01d099;
 }
 
 .chatGPT4-input {
@@ -250,11 +257,16 @@
   margin-right: 10px;
 }
 
+.chatGPT4-message-content {
+  margin: 0.5rem 0rem 0rem 0rem;
+}
+
 .chatGPT4-privacy {
   font-size: 0.5rem;
   color: #ffffff;
   text-align: left;
-  color: #b08af7;
+  /* color: #b08af7; */
+  color: #01d099;
   padding: 0.2rem;
 }
 
