@@ -60,14 +60,18 @@ const ChatGPT4 = (props) => {
     }
   };
 
-  const handlePopoutClick = () => {
-    // Your custom click event handler logic here
-    console.log('Button clicked');
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSend();
+    }
   };
 
+  const handlePopoutClick = () => {};
+
   const handleCloseClick = () => {
-    // Your custom click event handler logic here
-    console.log('Button clicked');
+    if (props.onChatClick) {
+      props.onChatClick();
+    }
   };
 
   return (
@@ -108,6 +112,7 @@ const ChatGPT4 = (props) => {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             onClick={() => handleSend()}
+            onKeyPress={handleKeyPress}
             className="chatGPT4-input-text"
           />
           <input onClick={handleSend} className="chatGPT-submitBtn" type="image" src={submit_icon} alt="Close" />

@@ -92,7 +92,7 @@ function Home() {
         )}
         {showChat && (
           <div className="chatGPT4">
-            <ChatGPT4Component profileImg={profileImg} />
+            <ChatGPT4Component profileImg={profileImg} onChatClick={handleChatClick} />
           </div>
         )}
       </div>
