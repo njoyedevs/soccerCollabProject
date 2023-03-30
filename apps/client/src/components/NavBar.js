@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faFutbol, faStar, faNewspaper, faVideo, } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faFutbol, faStar, faNewspaper, faVideo, faComments } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
 import { createProduct } from '../services/internalApiService';
-import { Link } from'react-router-dom';
+import { Link } from 'react-router-dom';
+import trophy_icon from '../static/images/trophy_icon.png';
+import video_icon from '../static/images/video_icon.png';
+import news_icon from '../static/images/news_icon.png';
+import soccer_ball from '../static/images/soccer_ball.png';
+import chatgpt_icon2 from '../static/images/chatgpt_icon2.png';
 
 const GOOGLE_ClientID = process.env.REACT_APP_GOOGLE_ClientID;
 
@@ -60,6 +65,9 @@ const NavBar = (props) => {
       { theme: 'filled_black', size: 'large', type: 'standard' } // Can use type icon instead of standard and size small and theme outline for white
     );
 
+    if (user.picture) {
+      props.setProfileImg(user.picture);
+    }
     // console.log(user)
 
     // google.accounts.id.prompt() // Turn on for Prompt instead of Button
@@ -89,6 +97,18 @@ const NavBar = (props) => {
     }
   };
 
+  const handleNewsClick = () => {
+    if (props.onNewsClick) {
+      props.onNewsClick();
+    }
+  };
+
+  const handleChatGPTClick = () => {
+    if (props.onChatClick) {
+      props.onChatClick();
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="dropDown">
@@ -102,7 +122,9 @@ const NavBar = (props) => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item ><Link to={`/team`}>About the Developers</Link> </Dropdown.Item>
+            <Dropdown.Item>
+              <Link to={`/team`}>About the Developers</Link>{' '}
+            </Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
           </Dropdown.Menu>
@@ -113,28 +135,50 @@ const NavBar = (props) => {
       </div>
       <div className="icons" onClick={handleScoresClick}>
         <span>
-          <FontAwesomeIcon icon={faFutbol} spin />
+          {/* <FontAwesomeIcon icon={faFutbol} spin /> */}
+          <img src={soccer_ball} alt="soccer ball" className="iconImg spin" />
         </span>
-        <button type="button" class="btn btn-link">Matches</button>
+        <button type="button" className="btn btn-link">
+          Matches
+        </button>
       </div>
       <div className="icons" onClick={handleMatchesClick}>
         <span>
-          <FontAwesomeIcon icon={faStar} spin />
+          {/* <FontAwesomeIcon icon={faStar} spin /> */}
+          <img src={trophy_icon} alt="trophy" className="iconImg spin" />
         </span>
-        <button type="button" class="btn btn-link">Standings</button>
+        <button type="button" className="btn btn-link">
+          Standings
+        </button>
       </div>
       <div className="icons">
         <span>
-          <FontAwesomeIcon icon={faNewspaper} spin />
+          {/* <FontAwesomeIcon icon={faNewspaper} spin /> */}
+          <img src={news_icon} alt="global news" className="iconImg spin" />
         </span>
-        <button type="button" class="btn btn-link">News</button>
+        <button type="button" className="btn btn-link">
+          News
+        </button>
       </div>
       <div className="icons" onClick={handleVideosClick}>
         <span>
-          <FontAwesomeIcon icon={faVideo} style={{ color: '#ffffff' }} spin />
+          {/* <FontAwesomeIcon icon={faVideo} style={{ color: '#ffffff' }} spin /> */}
+          <img src={video_icon} alt="video camera" className="iconImg spin" />
         </span>
         {/* <span>Videos</span> */}
-        <button type="button" class="btn btn-link">Videos</button>
+        <button type="button" className="btn btn-link">
+          Videos
+        </button>
+      </div>
+      <div className="icons" onClick={handleChatGPTClick}>
+        <span>
+          {/* <FontAwesomeIcon icon={faComments} spin /> */}
+          <img src={chatgpt_icon2} alt="chatgpt" className="iconImg spin" />
+        </span>
+        {/* <span>Videos</span> */}
+        <button type="button" className="btn btn-link">
+          ChatGPT-4 Soccer Expert
+        </button>
       </div>
       {/* <div id="signInDiv"></div> - Turn Back on For Button */}
       {/* className="btn btn-outline-light .bg-dark" - If needing the same styling as logout*/}

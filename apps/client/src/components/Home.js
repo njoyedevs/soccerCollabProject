@@ -1,4 +1,3 @@
-
 import '../App.css';
 import React, { useState } from 'react';
 import Standings from './StandingsComponent';
@@ -8,17 +7,19 @@ import WaveBackground from './WaveBackground';
 import BallsComponent from './BallsComponent';
 import Leagues from './LeaguesComponent';
 import LiveStream from './LiveStream';
+import ChatGPT4Component from './ChatGPT4Component';
 
-
-
-const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
-// const API_FB_KEY = ""
+// const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
+const API_FB_KEY = '';
 
 function Home() {
   const [desiredLeague, setDesiredLeague] = useState('39');
   const [showScores, setShowScores] = useState(true);
   const [showMatches, setShowMatches] = useState(true);
   const [showVideos, setShowVideos] = useState(false);
+  const [showNews, setShowNews] = useState(true);
+  const [showChat, setShowChat] = useState(false);
+  const [profileImg, setProfileImg] = useState('');
 
   const handleLeagueSelected = (selectedLeague) => {
     // console.log('Selected league in ParentComponent:', selectedLeague);
@@ -38,6 +39,14 @@ function Home() {
     setShowVideos(!showVideos);
   };
 
+  const handleNewsClick = () => {
+    setShowNews(!showNews);
+  };
+
+  const handleChatClick = () => {
+    setShowChat(!showChat);
+  };
+
   return (
     <div className="App">
       <header className="top-menu">
@@ -45,6 +54,9 @@ function Home() {
           onScoresClick={handleScoresClick}
           onMatchesClick={handleMatchesClick}
           onVideosClick={handleVideosClick}
+          onNewsClick={handleNewsClick}
+          onChatClick={handleChatClick}
+          setProfileImg={setProfileImg}
         />
       </header>
       <div className="middleCol">
@@ -69,6 +81,18 @@ function Home() {
         {showVideos && (
           <div className="videoBottomCol box">
             <LiveStream />
+          </div>
+        )}
+      </div>
+      <div className="lastCol">
+        {showChat && (
+          <div className="chatGPT4">
+            <ChatGPT4Component />
+          </div>
+        )}
+        {showChat && (
+          <div className="chatGPT4">
+            <ChatGPT4Component profileImg={profileImg} />
           </div>
         )}
       </div>
