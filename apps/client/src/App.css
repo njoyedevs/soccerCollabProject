@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Balsamiq+Sans&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -139,14 +140,17 @@
 
 .dropDown {
   display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: center; /* Align items horizontally */
+  /* align-items: center; Align items vertically */
+  /* justify-content: center; Align items horizontally */
+  padding-top: 2px;
 }
 
 .footyStats {
   margin-left: 5px;
   padding-bottom: 4px;
   font-size: 30px;
+  font-family: 'Alkatra', cursive;
+  font-size: 2rem;
 }
 
 .sign-out-button {

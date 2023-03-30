@@ -112,7 +112,7 @@ const NavBar = (props) => {
       <div className="dropDown">
         <Dropdown>
           <Dropdown.Toggle
-            style={{ backgroundColor: 'black', border: 'none' }}
+            style={{ backgroundColor: 'black', border: 'none'}}
             variant="secondary"
             id="dropdown-basic"
           >
