@@ -59,7 +59,7 @@ function Home() {
           setProfileImg={setProfileImg}
         />
       </header>
-      <div className="middleCol">
+      <div className="middleRow">
         <BallsComponent />
       </div>
       <div className="bottomCol">
