@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faFutbol, faStar, faNewspaper, faVideo, faComments } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
@@ -97,11 +95,11 @@ const NavBar = (props) => {
     }
   };
 
-  const handleNewsClick = () => {
-    if (props.onNewsClick) {
-      props.onNewsClick();
-    }
-  };
+  // const handleNewsClick = () => {
+  //   if (props.onNewsClick) {
+  //     props.onNewsClick();
+  //   }
+  // };
 
   const handleChatGPTClick = () => {
     if (props.onChatClick) {
@@ -114,15 +112,17 @@ const NavBar = (props) => {
       <div className="dropDown">
         <Dropdown>
           <Dropdown.Toggle
-            style={{ backgroundColor: 'black', border: '.1rem solid white' }}
+            style={{ backgroundColor: 'black', border: 'none' }}
             variant="secondary"
             id="dropdown-basic"
           >
-            <FontAwesomeIcon icon={faBars} />
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item ><Link to={`/team`} style={{textDecoration: "none", color:"black"}}>About the Developers</Link> </Dropdown.Item>
+            <Dropdown.Item ><Link to={`/team`} style={{ textDecoration: "none", color: "black" }}>About the Developers</Link> </Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
@@ -132,7 +132,7 @@ const NavBar = (props) => {
       </div>
       <div className="icons" onClick={handleScoresClick}>
         <span>
-          {/* <FontAwesomeIcon icon={faFutbol} spin /> */}
+
           <img src={soccer_ball} alt="soccer ball" className="iconImg spin" />
         </span>
         <button type="button" className="btn btn-link">
@@ -141,7 +141,7 @@ const NavBar = (props) => {
       </div>
       <div className="icons" onClick={handleMatchesClick}>
         <span>
-          {/* <FontAwesomeIcon icon={faStar} spin /> */}
+
           <img src={trophy_icon} alt="trophy" className="iconImg spin" />
         </span>
         <button type="button" className="btn btn-link">
@@ -150,7 +150,7 @@ const NavBar = (props) => {
       </div>
       <div className="icons">
         <span>
-          {/* <FontAwesomeIcon icon={faNewspaper} spin /> */}
+
           <img src={news_icon} alt="global news" className="iconImg spin" />
         </span>
         <button type="button" className="btn btn-link">
@@ -159,26 +159,20 @@ const NavBar = (props) => {
       </div>
       <div className="icons" onClick={handleVideosClick}>
         <span>
-          {/* <FontAwesomeIcon icon={faVideo} style={{ color: '#ffffff' }} spin /> */}
           <img src={video_icon} alt="video camera" className="iconImg spin" />
         </span>
-        {/* <span>Videos</span> */}
         <button type="button" className="btn btn-link">
           Videos
         </button>
       </div>
       <div className="icons" onClick={handleChatGPTClick}>
         <span>
-          {/* <FontAwesomeIcon icon={faComments} spin /> */}
           <img src={chatgpt_icon2} alt="chatgpt" className="iconImg spin" />
         </span>
-        {/* <span>Videos</span> */}
         <button type="button" className="btn btn-link">
           ChatGPT-4 Soccer Expert
         </button>
       </div>
-      {/* <div id="signInDiv"></div> - Turn Back on For Button */}
-      {/* className="btn btn-outline-light .bg-dark" - If needing the same styling as logout*/}
       <button type="button" id="signInDiv" className="login-button"></button>
       {Object.keys(user).length !== 0 && (
         <div>

@@ -9,8 +9,8 @@ import Leagues from './LeaguesComponent';
 import LiveStream from './LiveStream';
 import ChatGPT4Component from './ChatGPT4Component';
 
-// const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
-const API_FB_KEY = '';
+const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
+// const API_FB_KEY = '';
 
 function Home() {
   const [desiredLeague, setDesiredLeague] = useState('39');

@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 import BouncyBall from './BouncyBall';
 import soccer_ball from '../static/images/soccer_ball.png';
 
@@ -54,10 +52,8 @@ const BallsComponent = () => {
           onClick={toggleBallsVisibility}
         >
           {ballsVisible ? (
-            // <FontAwesomeIcon icon={faFutbol} style={{ '--fa-secondary-color': '#ebc400' }}/
             <img src={soccer_ball} alt="soccer ball" className="iconImg" />
           ) : (
-            // <FontAwesomeIcon icon={faFutbol} bounce style={{ '--fa-secondary-color': '#ebc400' }} />
             <img src={soccer_ball} alt="soccer ball" className="iconImg bounce" />
           )}
           <p style={{ fontSize: 12 }}>Bounce Me</p>
