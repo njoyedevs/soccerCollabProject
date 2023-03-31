@@ -1,0 +1,59 @@
+.section._404 {
+  background-color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container.error {
+  text-align: center;
+}
+
+.error-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.big-score {
+  font-size: 8em;
+  font-weight: bold;
+  margin: 0 10px;
+  color: #333;
+}
+
+._404-ball {
+  width: 100px;
+  height: 100px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.error-text {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.link.goback {
+  background-color: #f03c69;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.link.goback:hover {
+  background-color: #e23058;
+}
