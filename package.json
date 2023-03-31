@@ -29,7 +29,9 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"
-    ]
+    ],
+    "**/build/**": "echo 'Ignoring build directory'",
+    "**/node_modules/**": "echo 'Ignoring node_modules directory'"
   },
   "dependencies": {
     "react-router-dom": "^6.9.0"
