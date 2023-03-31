@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 
 import { config as mongooseConfig } from './config/mongoose.config.js';
-import { productRoutes } from './routes/product.routes.js';
+import { userRoutes } from './routes/user.routes.js';
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ const port = process.env.PORT;
 
 app.use(cors());
 app.use(express.json(), express.urlencoded({ extended: true }));
-productRoutes(app);
+userRoutes(app);
 
 app.use((error, req, res, next) => {
   console.log(error);

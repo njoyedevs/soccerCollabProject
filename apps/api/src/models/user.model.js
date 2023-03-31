@@ -4,7 +4,7 @@ import pictureValidator from '../components/Validators.js';
 
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-const ProductSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
@@ -45,6 +45,6 @@ const ProductSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Product = mongoose.model('loginregistration', ProductSchema);
+const User = mongoose.model('loginregistration', UserSchema);
 
-export default Product;
+export default User;
