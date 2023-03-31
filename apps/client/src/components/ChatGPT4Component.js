@@ -9,7 +9,6 @@ import submit_icon from '../static/images/submit_icon.png';
 import spinner_icon from '../static/images/spinner_icon.png';
 
 const API_FB_KEY = process.env.REACT_APP_OPENAI_API_KEY;
-// const API_FB_KEY = ''
 
 const ChatGPT4 = (props) => {
   const configuration = new Configuration({

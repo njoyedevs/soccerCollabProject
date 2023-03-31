@@ -12,17 +12,16 @@ const index = (request, response) => {
     });
 };
 
-
 const createUser = (request, response, next) => {
   User.create(request.body)
     .then((user) => {
       // send welcome email to user
       const transporter = nodemailer.createTransport({
-        service: "Hotmail",
+        service: 'Hotmail',
         auth: {
           user: process.env.EMAIL,
           pass: process.env.PASSWORD,
-        }
+        },
       });
       const mailOptions = {
         from: process.env.EMAIL,
@@ -50,7 +49,6 @@ const createUser = (request, response, next) => {
       }
     });
 };
-
 
 const getAllUsers = (request, response) => {
   User.find({})
