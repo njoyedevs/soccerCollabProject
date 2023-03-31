@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
-import { createProduct } from '../services/internalApiService';
+import { createUser } from '../services/internalApiService';
 import { Link } from 'react-router-dom';
 import trophy_icon from '../static/images/trophy_icon.png';
 import video_icon from '../static/images/video_icon.png';
@@ -31,17 +31,17 @@ const NavBar = (props) => {
       picture: userObject.picture,
     };
 
-    createProduct(newObject)
+    createUser(newObject)
       .then((result) => {
         if (result.error) {
           console.log(result.error);
           // Show an error message to the user using your preferred method, e.g., an alert or a toast notification
         } else {
-          // Handle the successful creation of a new product
+          // Handle the successful creation of a new user
         }
       })
       .catch((err) => {
-        console.error('Error creating product:', err);
+        console.error('Error creating user:', err);
         // Show a generic error message to the user if the promise was rejected
       });
 
