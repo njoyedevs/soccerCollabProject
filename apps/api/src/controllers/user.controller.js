@@ -26,9 +26,16 @@ const createUser = (request, response, next) => {
       const mailOptions = {
         from: process.env.EMAIL,
         to: user.email,
-        subject: 'Welcome to our app! ⚽️ 🥅 ',
-        text: `Hi ${user.firstName},\n\nThank you for signing up to FootyStats! We're excited to have you on board.\n\nBest regards,\nFootyStats Team`,
+        subject: 'Welcome to FootyStats - stay on top of your game!⚽️ 🥅 ',
+        text: `Hi ${user.firstName},\n\n
+        Welcome to FootyStats! We're thrilled to have you on board.\n\n
+        As a soccer fan, you know how important it is to stay up-to-date with your team's performance. With our app, you can track their stats and stay on top of the latest league standings.\n\n
+        If you're curious about the masterminds behind FootyStats, check out our developers Diya and Nicolas on LinkedIn https://www.linkedin.com/in/diyaamour/ and https://www.linkedin.com/in/njoyedevs/.\n\n
+        Thanks for joining us on this exciting journey!🚀
+        \n\nBest regards,
+        \nThe FootyStats Team`,
       };
+
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error);
