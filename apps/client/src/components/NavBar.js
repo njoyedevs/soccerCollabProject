@@ -112,17 +112,31 @@ const NavBar = (props) => {
       <div className="dropDown">
         <Dropdown>
           <Dropdown.Toggle
-            style={{ backgroundColor: 'black', border: 'none'}}
+            style={{ backgroundColor: 'transparent', border: 'none' }}
             variant="secondary"
             id="dropdown-basic"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-list" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="white"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
             </svg>
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item ><Link to={`/team`} style={{ textDecoration: "none", color: "black" }}>About the Developers</Link> </Dropdown.Item>
+            <Dropdown.Item>
+              <Link to={`/team`} style={{ textDecoration: 'none', color: 'black' }}>
+                About the Developers
+              </Link>{' '}
+            </Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
@@ -132,7 +146,6 @@ const NavBar = (props) => {
       </div>
       <div className="icons" onClick={handleScoresClick}>
         <span>
-
           <img src={soccer_ball} alt="soccer ball" className="iconImg spin" />
         </span>
         <button type="button" className="btn btn-link">
@@ -141,7 +154,6 @@ const NavBar = (props) => {
       </div>
       <div className="icons" onClick={handleMatchesClick}>
         <span>
-
           <img src={trophy_icon} alt="trophy" className="iconImg spin" />
         </span>
         <button type="button" className="btn btn-link">
@@ -150,7 +162,6 @@ const NavBar = (props) => {
       </div>
       <div className="icons">
         <span>
-
           <img src={news_icon} alt="global news" className="iconImg spin" />
         </span>
         <button type="button" className="btn btn-link">
