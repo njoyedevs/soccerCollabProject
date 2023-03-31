@@ -4,7 +4,7 @@ const LiveStream = (props) => {
   return (
     <div>
       <iframe
-        src="https://www.scorebat.com/embed/?token=NzE2NjRfMTY4MDA1NTM2OV9iNjAzMTg2YmYyZmIyNjQxNTllNjkwYWRkNjcwMDJlZTU1N2M0MTMy"
+        src="https://www.scorebat.com/embed/"
         width="600"
         height="760"
         // allowFullScreen
