@@ -7,7 +7,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* other components */}
       <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/team' element={<Team/>}/>

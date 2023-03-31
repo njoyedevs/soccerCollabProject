@@ -137,7 +137,7 @@ const NavBar = (props) => {
                 About the Developers
               </Link>{' '}
             </Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            {/* <Dropdown.Item href="#/action-2">Another action</Dropdown.Item> */}
           </Dropdown.Menu>
         </Dropdown>
         <div className="footyStats">
