@@ -120,11 +120,7 @@
   text-align: center;
   font-family: 'Poppins', sans-serif;
   margin-top: 20px;
-  margin-left: 34rem;
   font-size: 3rem;
-    /* outline: 1px solid red; */
-    width: 50%;
-
 }
 
 .description:hover h1,
@@ -161,15 +157,6 @@
 .divider{
   padding-top: 20px;
 }
-.header{
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-}
-.header button {
-  margin-right: 30px;
-
-};
 
 .discord-link {
   transition: all 1s ease-out;
