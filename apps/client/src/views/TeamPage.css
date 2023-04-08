@@ -1,119 +1,103 @@
-.devs-page{
+.devs-page {
   margin: 0 auto;
   padding: 0 auto;
 }
-.member
-{
-    margin: 20px 15px;
-    width: 350px;
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-    transition: all 1s;
+.member {
+  margin: 20px 15px;
+  width: 350px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 1s;
 }
 
-.member:hover
-{
-    transform: scale(1.01);
+.member:hover {
+  transform: scale(1.01);
 }
 
-.description
-{
-    background-color: #fff;
-    width: 350px;
-    height: 500px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 100px;
-    padding-bottom: 10px;
-    transition: all 1s;
+.description {
+  background-color: #fff;
+  width: 350px;
+  height: 500px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 10px;
+  transition: all 1s;
 }
 
-.description:hover
-{
-    background-color: rgba(8,61,119,0.2);
-    color: white;
+.description:hover {
+  background-color: rgba(8, 61, 119, 0.2);
+  color: white;
 }
 
-#devs-img
-{
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #222222;
-    top: -30px;
-    z-index: 1;
+#devs-img {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #222222;
+  top: -30px;
+  z-index: 1;
 }
 
-.social-media
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: rgba(8,61,119);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.social-media {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(8, 61, 119);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.social-media a
-{
-    display: block;
-    width: 33%;
-    height: 100%;
-    background-color: #222222;
-    border-right: 2px solid #fff;
-    border-left: 2px solid #fff;
-    color: #fff;
-    transition: all 1s;
-    padding: 5px;
-    text-align: center;
+.social-media a {
+  display: block;
+  width: 33%;
+  height: 100%;
+  background-color: #222222;
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+  color: #fff;
+  transition: all 1s;
+  padding: 5px;
+  text-align: center;
 }
 
-.social-media a:hover
-{
-    background-color: red;
+.social-media a:hover {
+  background-color: red;
 }
 
-
-
-.description h1
-{
-    color: #222222;
-
+.description h1 {
+  color: #222222;
 }
 
-.description h2
-{
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    color: #F21B3F;
-    font-weight: 600;
-    font-size: 18px;
+.description h2 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #f21b3f;
+  font-weight: 600;
+  font-size: 18px;
 }
 
-.description p
-{
-    color: #222222;
-    text-align: justify;
-    padding: 0 15px;
+.description p {
+  color: #222222;
+  text-align: justify;
+  padding: 0 15px;
 }
 
-
-.members{
+.members {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .title {
   color: White;
@@ -125,7 +109,7 @@
 
 .description:hover h1,
 .description:hover p {
-    color: white;
+  color: white;
 }
 .social-media a {
   text-decoration: none;
@@ -154,7 +138,7 @@
 .svg-container:hover svg {
   display: none;
 }
-.divider{
+.divider {
   padding-top: 20px;
 }
 
@@ -167,7 +151,6 @@
 }
 
 .discord-text {
-
   top: 0;
   left: 100%;
   font-size: 10px;

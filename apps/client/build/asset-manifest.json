@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e737e3e8.css",
+    "main.js": "/static/js/main.0d85e182.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/3d_gold_soccerball2.png": "/static/media/3d_gold_soccerball2.271557ca14c5fbf59aa3.png",
+    "static/media/soccer_fan2.png": "/static/media/soccer_fan2.f895c2513646145bad40.png",
+    "static/media/dalle_chatbot.png": "/static/media/dalle_chatbot.d48691fe22ee02205ec8.png",
+    "static/media/news_icon.png": "/static/media/news_icon.6a1f9eb7351ed4f15999.png",
+    "static/media/trophy_icon.png": "/static/media/trophy_icon.448be8c5c77e83df98d9.png",
+    "static/media/chatgpt_icon2.png": "/static/media/chatgpt_icon2.f4ad51eeb8ba5a2a67d9.png",
+    "static/media/soccer_ball.png": "/static/media/soccer_ball.49be3675dd3a98932d48.png",
+    "static/media/video_icon.png": "/static/media/video_icon.38971413e42ebbff2f51.png",
+    "static/media/openai_icon.png": "/static/media/openai_icon.ec37c667268bb2747074.png",
+    "static/media/spinner_icon.png": "/static/media/spinner_icon.8587bc8ee00f7f15ae78.png",
+    "static/media/diya.png": "/static/media/diya.768f137d5af4b1396224.png",
+    "index.html": "/index.html",
+    "main.e737e3e8.css.map": "/static/css/main.e737e3e8.css.map",
+    "main.0d85e182.js.map": "/static/js/main.0d85e182.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e737e3e8.css",
+    "static/js/main.0d85e182.js"
+  ]
+}
