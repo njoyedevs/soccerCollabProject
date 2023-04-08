@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
-import { createUser } from '../services/internalApiService';
+import { createUser, getKeys } from '../services/internalApiService';
 import { Link } from 'react-router-dom';
 import trophy_icon from '../static/images/trophy_icon.png';
 import video_icon from '../static/images/video_icon.png';
 import news_icon from '../static/images/news_icon.png';
 import soccer_ball from '../static/images/soccer_ball.png';
 import chatgpt_icon2 from '../static/images/chatgpt_icon2.png';
-
-const GOOGLE_ClientID = process.env.REACT_APP_GOOGLE_ClientID;
 
 const NavBar = (props) => {
   const [user, setUser] = useState({});
@@ -51,21 +49,33 @@ const NavBar = (props) => {
   }
 
   useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id: GOOGLE_ClientID,
-      callback: HandleCallbackResponse,
-    });
+    console.log('Test');
 
-    google.accounts.id.renderButton(
-      // - Turn Back on For Button
-      document.getElementById('signInDiv'),
-      { theme: 'filled_black', size: 'large', type: 'standard' } // Can use type icon instead of standard and size small and theme outline for white
-    );
+    getKeys()
+      .then((data) => {
+        if (data.error) {
+          console.error('Error fetching API key in NavBar:', data.error);
+        } else {
+          /* global google */
+          google.accounts.id.initialize({
+            client_id: data.GOOGLE_ClientID,
+            callback: HandleCallbackResponse,
+          });
 
-    if (user.picture) {
-      props.setProfileImg(user.picture);
-    }
+          google.accounts.id.renderButton(
+            // - Turn Back on For Button
+            document.getElementById('signInDiv'),
+            { theme: 'filled_black', size: 'large', type: 'standard' } // Can use type icon instead of standard and size small and theme outline for white
+          );
+
+          if (user.picture) {
+            props.setProfileImg(user.picture);
+          }
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching API key in NavBar:', error);
+      });
     // console.log(user)
 
     // google.accounts.id.prompt() // Turn on for Prompt instead of Button
@@ -121,11 +131,11 @@ const NavBar = (props) => {
               width="30"
               height="30"
               fill="white"
-              class="bi bi-list"
+              className="bi bi-list"
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
               />
             </svg>
