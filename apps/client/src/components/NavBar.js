@@ -49,8 +49,6 @@ const NavBar = (props) => {
   }
 
   useEffect(() => {
-    console.log('Test');
-
     getKeys()
       .then((data) => {
         if (data.error) {

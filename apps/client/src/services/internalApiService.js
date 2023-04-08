@@ -18,12 +18,12 @@ export const createUser = (newUser) => {
 };
 
 export const getKeys = () => {
-  console.log('Test');
+  // console.log('Test');
 
   return http
     .get('/keys')
     .then((res) => {
-      console.log('This is the date: ' + res.data);
+      // console.log('This is the date: ' + res.data);
       return res.data;
     })
     .catch((err) => {
