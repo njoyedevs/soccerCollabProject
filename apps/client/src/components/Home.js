@@ -1,5 +1,6 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getKeys } from '../services/internalApiService';
 import Standings from './StandingsComponent';
 import Games from './GamesComponent';
 import NavBar from './NavBar';
@@ -9,9 +10,6 @@ import Leagues from './LeaguesComponent';
 import LiveStream from './LiveStream';
 import ChatGPT4Component from './ChatGPT4Component';
 
-const API_FB_KEY = process.env.REACT_APP_API_FB_KEY;
-// const API_FB_KEY = '';
-
 function Home() {
   const [desiredLeague, setDesiredLeague] = useState('39');
   const [showScores, setShowScores] = useState(true);
@@ -20,6 +18,21 @@ function Home() {
   const [showNews, setShowNews] = useState(true);
   const [showChat, setShowChat] = useState(false);
   const [profileImg, setProfileImg] = useState('');
+  const [apiFbKey, setApiFbKey] = useState(null);
+
+  useEffect(() => {
+    getKeys()
+      .then((data) => {
+        if (data.error) {
+          console.error('Error fetching API key in Home:', data.error);
+        } else {
+          setApiFbKey(data.API_FB_KEY);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching API key in Home:', error);
+      });
+  }, []);
 
   const handleLeagueSelected = (selectedLeague) => {
     // console.log('Selected league in ParentComponent:', selectedLeague);
@@ -69,13 +82,13 @@ function Home() {
               <Leagues handleLeagueSelected={handleLeagueSelected} />
             </div>
             <div className="rightBottomCol box">
-              <Standings apiKey={API_FB_KEY} league={desiredLeague} />
+              <Standings apiKey={apiFbKey} league={desiredLeague} />
             </div>
           </>
         )}
         {showMatches && (
           <div className="centerBottomCol box">
-            <Games apiKey={API_FB_KEY} />
+            <Games apiKey={apiFbKey} />
           </div>
         )}
         {showVideos && (
