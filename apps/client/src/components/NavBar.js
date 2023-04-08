@@ -10,11 +10,8 @@ import news_icon from '../static/images/news_icon.png';
 import soccer_ball from '../static/images/soccer_ball.png';
 import chatgpt_icon2 from '../static/images/chatgpt_icon2.png';
 
-const GOOGLE_ClientID = process.env.REACT_APP_GOOGLE_ClientID;
-
 const NavBar = (props) => {
   const [user, setUser] = useState({});
-  const [googleClientId, setGoogleClientId] = useState('');
 
   function HandleCallbackResponse(response) {
     // console.log('Encoded JWT ID token: ' + response.credential);
@@ -52,6 +49,8 @@ const NavBar = (props) => {
   }
 
   useEffect(() => {
+    console.log('Test');
+
     getKeys()
       .then((data) => {
         if (data.error) {
@@ -69,7 +68,6 @@ const NavBar = (props) => {
             { theme: 'filled_black', size: 'large', type: 'standard' } // Can use type icon instead of standard and size small and theme outline for white
           );
 
-          setGoogleClientId(data.apiKey);
           if (user.picture) {
             props.setProfileImg(user.picture);
           }
@@ -133,11 +131,11 @@ const NavBar = (props) => {
               width="30"
               height="30"
               fill="white"
-              class="bi bi-list"
+              className="bi bi-list"
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
               />
             </svg>

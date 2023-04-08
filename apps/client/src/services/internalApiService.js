@@ -17,11 +17,15 @@ export const createUser = (newUser) => {
     });
 };
 
-// internalAPI.js
 export const getKeys = () => {
+  console.log('Test');
+
   return http
     .get('/keys')
-    .then((res) => res.data)
+    .then((res) => {
+      console.log('This is the date: ' + res.data);
+      return res.data;
+    })
     .catch((err) => {
       if (err.response && err.response.status === 409) {
         console.log(err);
