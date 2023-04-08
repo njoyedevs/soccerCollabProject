@@ -16,3 +16,18 @@ export const createUser = (newUser) => {
       }
     });
 };
+
+// internalAPI.js
+export const getKeys = () => {
+  return http
+    .get('/keys')
+    .then((res) => res.data)
+    .catch((err) => {
+      if (err.response && err.response.status === 409) {
+        console.log(err);
+        return { error: err.response.data.message };
+      } else {
+        return { error: 'An unknown error occurred' };
+      }
+    });
+};

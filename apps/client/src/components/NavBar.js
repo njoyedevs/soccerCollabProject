@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import jwt_decode from 'jwt-decode';
 import SignOutButton from './SignOutButton';
-import { createUser } from '../services/internalApiService';
+import { createUser, getKeys } from '../services/internalApiService';
 import { Link } from 'react-router-dom';
 import trophy_icon from '../static/images/trophy_icon.png';
 import video_icon from '../static/images/video_icon.png';
@@ -14,6 +14,7 @@ const GOOGLE_ClientID = process.env.REACT_APP_GOOGLE_ClientID;
 
 const NavBar = (props) => {
   const [user, setUser] = useState({});
+  const [googleClientId, setGoogleClientId] = useState('');
 
   function HandleCallbackResponse(response) {
     // console.log('Encoded JWT ID token: ' + response.credential);
@@ -51,21 +52,32 @@ const NavBar = (props) => {
   }
 
   useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id: GOOGLE_ClientID,
-      callback: HandleCallbackResponse,
-    });
+    getKeys()
+      .then((data) => {
+        if (data.error) {
+          console.error('Error fetching API key in NavBar:', data.error);
+        } else {
+          /* global google */
+          google.accounts.id.initialize({
+            client_id: data.GOOGLE_ClientID,
+            callback: HandleCallbackResponse,
+          });
 
-    google.accounts.id.renderButton(
-      // - Turn Back on For Button
-      document.getElementById('signInDiv'),
-      { theme: 'filled_black', size: 'large', type: 'standard' } // Can use type icon instead of standard and size small and theme outline for white
-    );
+          google.accounts.id.renderButton(
+            // - Turn Back on For Button
+            document.getElementById('signInDiv'),
+            { theme: 'filled_black', size: 'large', type: 'standard' } // Can use type icon instead of standard and size small and theme outline for white
+          );
 
-    if (user.picture) {
-      props.setProfileImg(user.picture);
-    }
+          setGoogleClientId(data.apiKey);
+          if (user.picture) {
+            props.setProfileImg(user.picture);
+          }
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching API key in NavBar:', error);
+      });
     // console.log(user)
 
     // google.accounts.id.prompt() // Turn on for Prompt instead of Button
