@@ -50,13 +50,14 @@ Access the application at http://localhost:3000 or your preferred port.
 
 ## Quick Tour
 
-1. Main Dashboard with extensive interavtivity including:
-  * Current Global Soccer Match Calendar
-  * CUrrent Leauge Standings w/ Toggle
-  * Live Soccer Highlights and Matches
-  * ChatGPT4 Soccer Expert (System Message Guided)
-  * GoogleOAuth
-  * Bouncy Soccer Ball (Dynamic State)
+1.	Main Dashboard with extensive interactivity including:
+    •	Current Global Soccer Match Calendar
+    •	Current League Standings w/ Toggle
+    •	Live Soccer Highlights and Matches
+    •	ChatGPT4 Soccer Expert (System Message Guided)
+    •	Google OAuth
+    •	Bouncy Soccer Ball (Dynamic State)
+
 
 ![Main Dashboard](./MainDashboard.jpg)
 
