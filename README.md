@@ -48,4 +48,30 @@ Set up ChatGPT-4 API keys in the project configuration.
 Start the server: npm start
 Access the application at http://localhost:3000 or your preferred port.
 
+## Quick Tour
+
+1. Main Dashboard with extensive interavtivity including:
+  * Current Global Soccer Match Calendar
+  * CUrrent Leauge Standings w/ Toggle
+  * Live Soccer Highlights and Matches
+  * ChatGPT4 Soccer Expert (System Message Guided)
+  * GoogleOAuth
+  * Bouncy Soccer Ball (Dynamic State)
+
+![Main Dashboard](./MainDashboard.jpg)
+
+<hr>
+
+2. Bouncy Soccer Balls (dynamically rendered)
+
+![Bouncy Soccer Balls](./BouncyBallState.jpg)
+
+<hr>
+
+3. Meet the Developers
+
+![Meet the Developers Page](./MeetTheDevelopers.jpg)
+
+<hr>
+
 For more detailed instructions and additional information, please refer to the project's GitHub repository.
