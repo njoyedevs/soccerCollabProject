@@ -1,4 +1,4 @@
-## FootyStats - Interactive Football (Soccer) Web Application
+# FootyStats - Interactive Football (Soccer) Web Application
 FootyStats is a captivating, highly interactive full-stack football (soccer) web application developed using the JavaScript MERN stack (MongoDB, Express.js, React.js, and Node.js). It features real-time league standings, scores, live content, secure Google OAuth sign-in, and an intelligent ChatGPT-4 Soccer Expert.
 
 ## Collaboration
