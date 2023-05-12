@@ -22,7 +22,7 @@ Integration of ChatGPT-4 Soccer Expert as an intelligent copilot, ensuring only 
 Interactive bouncing soccer balls for user engagement
 
 ## Live Demo
-FootyStats: http://footystats.xyz/
+FootyStats: https://footystats.xyz/
 
 ## Source Code
 GitHub Repository: https://github.com/njoyedevs/soccerCollabProject
