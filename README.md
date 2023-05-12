@@ -4,6 +4,7 @@ FootyStats is a captivating, highly interactive full-stack football (soccer) web
 ## Collaboration
 In collaboration with Diya Amour:
 LinkedIn: https://www.linkedin.com/in/diyaamour/
+Github: https://github.com/diyaamour
 
 ## Technologies Used
 JavaScript (MongoDB, Express.js, React.js, and Node.js)
