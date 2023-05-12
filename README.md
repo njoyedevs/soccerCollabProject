@@ -69,7 +69,11 @@ Access the application at http://localhost:3000 or your preferred port.
 
 <hr>
 
-3. Meet the Developers
+3. ChatGPT-4 Soccer Expert
+
+![ChatGPT-4 Soccer Expert](./SoccerExpert.jpg)
+
+4. Meet the Developers
 
 ![Meet the Developers Page](./MeetTheDevelopers.jpg)
 
